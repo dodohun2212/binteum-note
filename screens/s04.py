@@ -12,7 +12,8 @@ from core.priority import ACTIONS, split_review
 from screens import common
 
 VIEWS = ("🎯 공부 순서와 오답노트", "📒 시험 대비 요약 노트")
-REVIEW_NOTE = "'진단 안 함'은 출제 가능성 점수가 20점 미만이거나 빠른 진단에서 빠져 문제를 내지 않은 개념이에요."
+REVIEW_NOTE = ("'아직 확인 안 함'은 출제 가능성 점수가 20점 미만이거나 빠른 진단에서 빠져 문제를 내지 않은 개념이에요. "
+               "아는지 모르는지 확인하지 않았으니 이해도를 중간으로 두고 순서를 계산했어요.")
 
 
 @st.cache_data(show_spinner=False, max_entries=300)

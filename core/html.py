@@ -53,8 +53,11 @@ def badge(text, kind: str = "plain") -> str:
     return f'<span class="bn-badge bn-{kind}">{esc(text)}</span>'
 
 
+STATUS_SHOWN = {"진단 안 함": "아직 확인 안 함"}   # 화면 표시만 바꾼다(문제를 내지 않은 개념)
+
+
 def status_badge(status: str) -> str:
-    return badge(status, STATUS_KIND.get(status, "mute"))
+    return badge(STATUS_SHOWN.get(status, status), STATUS_KIND.get(status, "mute"))
 
 
 _CITE = re.compile(r"\((p\.[^()]{0,40})\)")

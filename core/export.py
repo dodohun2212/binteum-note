@@ -17,7 +17,7 @@ ACTION_HINT = {
     "다음": "'지금 당장'을 끝낸 뒤에 보세요.",
     "복습만": "이미 알거나 출제 가능성이 낮은 개념이에요. 시간이 남으면 훑어보세요.",
 }
-FORMULA = "우선순위 = 출제 가능성 점수 × (1 − 이해도). 이해도는 앎 1.0 · 헷갈림 0.5 · 모름 0.0 · 진단 안 함 0.5예요."
+FORMULA = "우선순위 = 출제 가능성 점수 × (1 − 이해도). 이해도는 앎 1.0 · 헷갈림 0.5 · 모름 0.0이고, 문제를 내지 않아 아직 확인 안 한 개념은 중간값 0.5로 둬요."
 
 DOC_CSS = """
 body{font-family:-apple-system,'Segoe UI','Malgun Gothic','Apple SD Gothic Neo',sans-serif;font-size:17px;
