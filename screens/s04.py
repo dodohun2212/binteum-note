@@ -95,12 +95,13 @@ def make_notes(only=None) -> None:
                 ss["notes"][cid] = saved
                 continue
         todo[cid] = (cache_key, p, ss["grading"].get(cid) if cid in questions else None)
-    ss["notes_made"] = True
     ss["notes_failed"] = [c for c in ss["notes_failed"] if c not in ss["notes"]]
     if not todo:
+        ss["notes_made"] = True
         return
     if material is None or common.ai_blocked("notes"):
         ss["notes_failed"] = sorted(set(ss["notes_failed"]) | set(todo))
+        ss["notes_made"] = True
         return
     jobs = {cid: (lambda usage, c=cmap[cid], t=t: note.make_note(c, t[1], t[2], utts, material, meta, usage))
             for cid, t in todo.items()}
@@ -111,6 +112,8 @@ def make_notes(only=None) -> None:
         if cache is not None:
             cache.put(todo[cid][0], value)
     ss["notes_failed"] = sorted((set(ss["notes_failed"]) | set(errors)) - set(results))
+    # 다 끝난 뒤에만 '만들었음'으로 둔다. 만드는 도중 다른 버튼을 눌러 끊기면 다음에 다시 만든다.
+    ss["notes_made"] = True
     if errors:
         common.set_stage_error("notes", next(iter(errors.values())))
 
