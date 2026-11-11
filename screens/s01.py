@@ -161,12 +161,6 @@ def render() -> None:
     if 0 <= left <= 2:
         st.caption(f"이 화면에서 분석은 {left}번 더 할 수 있어요.")
 
-    diffs = "".join(f"<li>{esc(d)}</li>" for d in DIFFS)
-    st.html(f'<div class="bn-card"><h4>ChatGPT·에브리타임과 다른 점</h4><ul class="bn-diff">{diffs}</ul></div>'
-            + _preview_html()
-            + f'<div class="bn-box bn-box-ok"><div class="bn-box-t">실제 수업으로 확인</div><p>{esc(REAL_CHECK)}</p></div>'
-            + f'<div class="bn-box bn-box-nf"><p>{esc(NOTICE)}</p></div>')
-
     st.subheader("내 자료로 하기")
     file = st.file_uploader(f"강의자료 (PDF, PPTX · 최대 {config.MAX_MATERIAL_MB}MB)", type=["pdf", "pptx"],
                             key="w_material")
@@ -188,4 +182,9 @@ def render() -> None:
     if st.button("분석 시작", type="primary", width="stretch", key="w_analyze",
                  disabled=file is None or not has_key):
         analyze(file, audio, pasted or "")
+    diffs = "".join(f"<li>{esc(d)}</li>" for d in DIFFS)
+    st.html(f'<div class="bn-card"><h4>ChatGPT·에브리타임과 다른 점</h4><ul class="bn-diff">{diffs}</ul></div>'
+            + _preview_html()
+            + f'<div class="bn-box bn-box-ok"><div class="bn-box-t">실제 수업으로 확인</div><p>{esc(REAL_CHECK)}</p></div>'
+            + f'<div class="bn-box bn-box-nf"><p>{esc(NOTICE)}</p></div>')
     st.caption(SEND_NOTE)
