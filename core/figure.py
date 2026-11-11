@@ -107,7 +107,8 @@ def to_html(fig) -> str:
     cap = f'<div class="bn-fig-cap">{esc(fig["caption"])}</div>' if fig.get("caption") else ""
     if fig["kind"] == "tree":
         data = base64.b64encode(tree_svg(fig).encode("utf-8")).decode("ascii")
-        body = f'<img alt="트리 그림" src="data:image/svg+xml;base64,{data}">'
+        alt = esc(to_text(fig)).replace('"', "&quot;")
+        body = f'<img alt="{alt}" src="data:image/svg+xml;base64,{data}">'
     elif fig["kind"] == "array":
         cells = "".join(f"<td>{esc(v)}</td>" for v in fig["items"])
         idx = "".join(f"<td>{fig['start'] + i}</td>" for i in range(len(fig["items"])))

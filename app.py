@@ -48,7 +48,7 @@ APP_CSS = """
 .bn-step-on{color:#1d4ed8;font-weight:700}
 .bn-title{font-size:1.9rem;margin:.05em 0;line-height:1.25;padding:0}
 .bn-sub{font-size:1.04rem;color:#374151;margin:0 0 .3em;line-height:1.55}
-.bn-diff{margin:.2em 0 .6em 1.1em;padding:0}
+.bn-diff{margin:.2em 0 .6em 0;padding:0 0 0 1.2em}
 .bn-diff li{margin:.35em 0;line-height:1.6}
 textarea,.stRadio label p,.stCheckbox label p,.stTextArea label p{font-size:16px !important}
 .stRadio label{padding:3px 0}

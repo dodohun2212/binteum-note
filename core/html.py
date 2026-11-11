@@ -143,8 +143,8 @@ BASE_CSS = """
 .bn-box-ok{border-color:#4ade80;background:#f0fdf4}
 .bn-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid #f1f5f9;flex-wrap:wrap}
 .bn-row-rank{width:1.8em;font-weight:700;color:#6b7280;flex:0 0 auto}
-.bn-row-name{flex:1 1 9em;min-width:0;font-weight:600}
-.bn-row-bar{flex:1 1 6em;min-width:5em}
+.bn-row-name{flex:1 1 7em;min-width:0;font-weight:600}
+.bn-row-bar{flex:1 1 3em;min-width:3em}
 .bn-row-pct{flex:0 0 auto;font-weight:700;color:#1d4ed8;min-width:3.2em;text-align:right}
 .bn-row-badges{flex:1 1 100%;padding-left:1.8em}
 .bn-dim{opacity:.55}

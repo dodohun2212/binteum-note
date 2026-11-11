@@ -204,10 +204,6 @@ def header(step: int) -> None:
             f'<h1 class="bn-title">{esc(title)}</h1><p class="bn-sub">{esc(sub)}</p>')
 
 
-def html(markup: str) -> None:
-    st.html(markup)
-
-
 def num_boxes(items) -> None:
     st.html(numrow(items))
 
